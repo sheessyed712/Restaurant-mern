@@ -12,13 +12,13 @@ const OrderManager = () => {
     }, []);
 
     const fetchOrders = async () => {
-        const res = await axios.get('http://localhost:5000/api/orders');
+        const res = await axios.get('https://restaurant-mern-1-flnm.onrender.com/api/orders');
         setOrders(res.data);
     };
 
     const updateStatus = async (id, status) => {
         try {
-            await axios.put(`http://localhost:5000/api/orders/${id}/status`, { status });
+            await axios.put(`https://restaurant-mern-1-flnm.onrender.com/api/orders/${id}/status`, { status });
             fetchOrders();
         } catch (err) {
             console.error("Failed to update status", err);

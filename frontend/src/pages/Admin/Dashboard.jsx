@@ -9,7 +9,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchAnalytics = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/orders/analytics');
+                const res = await axios.get('https://restaurant-mern-1-flnm.onrender.com/api/orders/analytics');
                 setStats(res.data);
             } catch (err) {
                 console.error(err);

@@ -11,7 +11,7 @@ const Menu = () => {
     const { cart, addToCart, removeFromCart } = useCart();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/dishes')
+        axios.get('https://restaurant-mern-1-flnm.onrender.com/api/dishes')
             .then(res => setDishes(res.data))
             .catch(err => console.error(err));
     }, []);

@@ -16,7 +16,7 @@ const AdminLogin = () => {
         
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:5000/api/admin/login', { username, password });
+            const res = await axios.post('https://restaurant-mern-1-flnm.onrender.com/api/admin/login', { username, password });
             
             // Save token and user to local storage
             localStorage.setItem('adminToken', res.data.token);

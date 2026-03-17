@@ -8,7 +8,7 @@ const MenuManager = () => {
     const [formData, setFormData] = useState({ name: '', description: '', price: '', category: 'Starters', imageUrl: '', isVeg: true });
 
     const fetchDishes = async () => {
-        const res = await axios.get('http://localhost:5000/api/dishes/all');
+        const res = await axios.get('https://restaurant-mern-1-flnm.onrender.com/api/dishes/all');
         setDishes(res.data);
     };
 
@@ -22,7 +22,7 @@ const MenuManager = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/dishes', formData);
+            await axios.post('https://restaurant-mern-1-flnm.onrender.com/api/dishes', formData);
             toast.success("Dish Added Successfully!");
             fetchDishes();
             setFormData({ name: '', description: '', price: '', category: 'Starters', imageUrl: '', isVeg: true });
@@ -32,14 +32,14 @@ const MenuManager = () => {
     };
 
     const toggleAvailability = async (id, currentStatus) => {
-        await axios.put(`http://localhost:5000/api/dishes/${id}`, { isAvailable: !currentStatus });
+        await axios.put(`https://restaurant-mern-1-flnm.onrender.com/api/dishes/${id}`, { isAvailable: !currentStatus });
         toast.info("Availability Updated");
         fetchDishes();
     };
 
     const deleteDish = async (id) => {
         if(window.confirm("Delete this dish permanently?")) {
-            await axios.delete(`http://localhost:5000/api/dishes/${id}`);
+            await axios.delete(`https://restaurant-mern-1-flnm.onrender.com/api/dishes/${id}`);
             toast.error("Dish Deleted");
             fetchDishes();
         }

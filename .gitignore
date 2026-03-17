@@ -11,3 +11,5 @@ dist
 # System files
 .DS_Store
 Thumbs.db
+
+mongodb+srv://admin:admin123@cluster0.e7dkwws.mongodb.net/Restaurant-mern?appName=Cluster0

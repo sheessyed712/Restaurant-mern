@@ -20,7 +20,7 @@ const Checkout = () => {
         const items = cart.map(item => ({ dishId: item._id, quantity: item.quantity }));
 
         try {
-            const res = await axios.post('http://localhost:5000/api/orders/place', {
+            const res = await axios.post('https://restaurant-mern-1-flnm.onrender.com/api/orders/place', {
                 tableNumber, whatsappNumber, items
             });
             

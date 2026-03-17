@@ -19,7 +19,7 @@ const TrackOrder = () => {
     const handleTrack = async () => {
         if (!query) return;
         try {
-            const res = await axios.post('http://localhost:5000/api/orders/track', { query });
+            const res = await axios.post('https://restaurant-mern-1-flnm.onrender.com/api/orders/track', { query });
             setOrders(res.data);
             setSearched(true);
         } catch (err) {
