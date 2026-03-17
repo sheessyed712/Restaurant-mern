@@ -8,25 +8,25 @@ const jwt = require('jsonwebtoken');
 // @access  Public
 
 
-// router.post('/register', async (req, res) => {
-//     try {
-//         const { username, password } = req.body;
+router.post('/register', async (req, res) => {
+    try {
+        const { username, password } = req.body;
         
-//         // Check if admin already exists
-//         let admin = await Admin.findOne({ username });
-//         if (admin) {
-//             return res.status(400).json({ msg: 'Admin already exists' });
-//         }
+        // Check if admin already exists
+        let admin = await Admin.findOne({ username });
+        if (admin) {
+            return res.status(400).json({ msg: 'Admin already exists' });
+        }
 
-//         // Create new admin (password hashing is handled in the model)
-//         admin = new Admin({ username, password });
-//         await admin.save();
+        // Create new admin (password hashing is handled in the model)
+        admin = new Admin({ username, password });
+        await admin.save();
         
-//         res.status(201).json({ msg: 'Admin registered successfully' });
-//     } catch (err) {
-//         res.status(500).json({ error: err.message });
-//     }
-// });
+        res.status(201).json({ msg: 'Admin registered successfully' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 // @route   POST /api/admin/login
 // @desc    Authenticate admin and get token
